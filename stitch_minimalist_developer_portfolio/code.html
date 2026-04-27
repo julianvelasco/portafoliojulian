@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#00dbe9",
+                        "primary-container": "#00f0ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#320047",
+                        "surface-dim": "#121318",
+                        "secondary-fixed-dim": "#00e38e",
+                        "on-secondary-container": "#007145",
+                        "on-primary-container": "#006970",
+                        "on-primary-fixed-variant": "#004f54",
+                        "tertiary-container": "#f4ccff",
+                        "tertiary": "#fff2fd",
+                        "surface-container-high": "#292a2f",
+                        "on-primary-fixed": "#002022",
+                        "on-tertiary-container": "#9900d0",
+                        "inverse-on-surface": "#2f3036",
+                        "surface-container": "#1e1f25",
+                        "on-background": "#e3e1e9",
+                        "primary-fixed": "#7df4ff",
+                        "surface-variant": "#34343a",
+                        "surface-tint": "#00dbe9",
+                        "background": "#121318",
+                        "on-secondary-fixed": "#002110",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "secondary": "#f5fff4",
+                        "surface-container-highest": "#34343a",
+                        "surface-container-low": "#1a1b21",
+                        "outline": "#849495",
+                        "on-surface": "#e3e1e9",
+                        "secondary-fixed": "#54ffaa",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "inverse-surface": "#e3e1e9",
+                        "inverse-primary": "#006970",
+                        "on-primary": "#00363a",
+                        "surface-bright": "#38393f",
+                        "on-secondary-fixed-variant": "#005230",
+                        "on-surface-variant": "#b9cacb",
+                        "tertiary-fixed": "#f8d8ff",
+                        "on-error": "#690005",
+                        "on-secondary": "#003920",
+                        "surface-container-lowest": "#0d0e13",
+                        "outline-variant": "#3b494b",
+                        "primary": "#dbfcff",
+                        "on-tertiary-fixed-variant": "#74009f",
+                        "secondary-container": "#0affa1",
+                        "surface": "#121318",
+                        "on-tertiary": "#520071"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xl": "64px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "margin": "24px",
+                        "lg": "40px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Space Grotesk"],
+                        "body-base": ["Space Grotesk"],
+                        "label-mono": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                        "label-mono": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cyber-glow-magenta {
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+            border: 1px solid rgba(255, 0, 255, 0.3);
+        }
+        .cyber-glow-cyan {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        .scanline-overlay {
+            background: linear-gradient(rgba(18, 19, 24, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-base">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-cyan-500/20 shadow-[0_0_15px_rgba(0,240,255,0.1)]">
+<nav class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-xl font-bold tracking-tighter text-cyan-400">DEV_CORE</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-label-mono text-label-mono" href="#">Projects</a>
+<a class="text-slate-400 hover:text-cyan-300 transition-colors duration-300 font-label-mono text-label-mono" href="#">Stack</a>
+<a class="text-slate-400 hover:text-cyan-300 transition-colors duration-300 font-label-mono text-label-mono" href="#">Career</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-bold tracking-tighter uppercase text-xs active:scale-95 transition-transform">
+                Contact
+            </button>
+</nav>
+</header>
+<main class="pt-24 min-h-screen relative overflow-hidden">
+<!-- Background Ambient Elements -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-on-tertiary-container rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary-container rounded-full blur-[120px]"></div>
+</div>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-xl grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 space-y-md">
+<div class="flex items-center gap-2 text-on-tertiary-container font-label-mono text-label-mono tracking-widest uppercase">
+<span class="w-8 h-[1px] bg-on-tertiary-container"></span>
+                    System.Init("Engineer")
+                </div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-none">
+                    Architecting <span class="text-primary-container">Robust</span> Digital Infrastructure
+                </h1>
+<p class="text-on-surface-variant max-w-xl text-body-base font-body-base">
+                    Specializing in low-latency systems and high-density data visualization. We build the core that powers modern technological ecosystems.
+                </p>
+<div class="flex gap-4 pt-4">
+<button class="bg-on-tertiary-container text-white px-8 py-4 font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+                        VIEW_REPOS
+                        <span class="material-symbols-outlined text-sm">terminal</span>
+</button>
+<button class="border border-outline-variant text-on-surface px-8 py-4 font-bold hover:bg-surface-container transition-colors">
+                        CURRICULUM_VITAE
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 relative group">
+<div class="absolute inset-0 bg-on-tertiary-container opacity-20 blur-2xl group-hover:opacity-40 transition-opacity"></div>
+<div class="relative bg-surface-container-high border border-outline-variant p-2 cyber-glow-magenta aspect-square">
+<img class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-500" data-alt="Futuristic glowing purple neon grid and 3D architectural wireframe in a dark cybernetic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwgEMwrT0SKX9pIc9FA5lP6uLOSBfbmkINuH81JW85HyPNcV0W3pij6-1BJV9zK5LKe92MmT7YDCwIooJOS41V24JvoPjJu4_pHhLFUWX9MoWUhDStMKzp4qNPFzpduMoHyF4oiOxdUspEvMp02vVamO2TNH5Zv_CYdiQx3L4l5Mew3to68jo0rd27DcbWvRc8alYzKfaYFUDzabdugX3y3O6FjC2kmLqaQotZrz3X5grpJT5Yl7_3gG1cznP3LGCizH_tVii27Ek"/>
+</div>
+</div>
+</section>
+<!-- Bento Grid Projects -->
+<section class="max-w-7xl mx-auto px-6 py-xl">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-md text-headline-md">CORE_PROJECTS</h2>
+<span class="font-label-mono text-label-mono text-on-tertiary-container">COUNT: 04</span>
+</div>
+<div class="grid md:grid-cols-12 gap-gutter">
+<!-- Large Project Card -->
+<div class="md:col-span-8 bg-surface-container-low border border-outline-variant relative overflow-hidden group hover:border-on-tertiary-container transition-colors cyber-glow-magenta">
+<div class="aspect-video relative">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Digital landscape with neon magenta data streams and circuit board patterns glowing in the dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOdWsYaAUU2H95iJIErUT70bKd-_hH2IOUXpdMIG8gfhhS37g6qH5lAgCQ5djwYJrhSkfsr5IFXoedMvhrUmmpsPhmpkGZ0e5csyUNxUPnatdlNLkNL0lz0IaHe9wukIcXegrQl7g9PTyQgWqXs7Vb8w3r5z75Q20qF-Miwj5tNJVN3AYcK0h5vVS9UPs-aqu-1KP-rNGrFVjH33qysbXTUqnRt4HPebii1XGqNvFYYy_lwCiRfm1U-SDrtS78ERXS8hw5O7i2VCk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
+</div>
+<div class="p-md absolute bottom-0 left-0 w-full">
+<div class="flex gap-2 mb-2">
+<span class="bg-on-tertiary-container/20 text-on-tertiary-container px-2 py-0.5 rounded-sm text-[10px] font-bold">RUST</span>
+<span class="bg-on-tertiary-container/20 text-on-tertiary-container px-2 py-0.5 rounded-sm text-[10px] font-bold">WEBSOCKETS</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white">NEURAL_SYNC_V2</h3>
+<p class="text-on-surface-variant text-sm mt-1">Real-time data synchronization engine for distributed neural networks.</p>
+</div>
+</div>
+<!-- Small Info Card -->
+<div class="md:col-span-4 bg-surface-container-high border border-outline-variant p-md flex flex-col justify-between hover:border-primary-container transition-colors cyber-glow-cyan">
+<div class="space-y-sm">
+<span class="material-symbols-outlined text-primary-container">memory</span>
+<h3 class="font-headline-md text-headline-md">SYSTEM_LOAD</h3>
+<div class="space-y-xs">
+<div class="flex justify-between font-label-mono text-xs">
+<span>CPU_USAGE</span>
+<span>42%</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full">
+<div class="h-full bg-primary-container w-[42%] relative overflow-hidden">
+<div class="scanline-overlay absolute inset-0"></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant font-label-mono uppercase tracking-tighter">Diagnostic stable</p>
+</div>
+<!-- Secondary Cards -->
+<div class="md:col-span-4 bg-surface-container border border-outline-variant p-md group hover:border-on-tertiary-container transition-colors">
+<div class="h-32 mb-sm bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all" data-alt="Microchip macro photography with magenta and cyan neon backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz3_Jp8scX7NvHCm70OEgNbtJUGjSdnGKbSujllDSDfQ0Zv0oZB4q0wDAIz7X1CHeOuHgIgD466nStjlbevTHY_HIO8wyxHgyLmwTnjY5rNhUNBCuyUSepXxYOxyQLXxJa8GFK-kARVHnIkN25yC0f9gbgh9H7wpEC_jCJLh4VxH5Rhg9tAD_JXWk14b50yYdYMvvUIPYT9maipbgOalbTFjc5jN1n_YPBwNWjvVX-dmGnlTmjcYGc4clmIdw3EnTRD6aWgpUTb1A"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">CYBER_TRACE</h3>
+<p class="text-on-surface-variant text-sm">Visual traceroute tool for localized network mapping and security audits.</p>
+</div>
+<div class="md:col-span-8 bg-surface-container border border-outline-variant p-md flex flex-col md:flex-row gap-md items-center">
+<div class="w-full md:w-1/2 h-40 bg-surface-container-low border border-outline-variant flex items-center justify-center relative overflow-hidden">
+<span class="material-symbols-outlined text-6xl text-on-tertiary-container/30">analytics</span>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(153,0,208,0.1),transparent_70%)]"></div>
+</div>
+<div class="w-full md:w-1/2 space-y-sm">
+<h3 class="font-headline-md text-headline-md">QUANTUM_DECRYPT</h3>
+<p class="text-on-surface-variant text-sm">Experimental post-quantum encryption protocols for secure data transmission over public channels.</p>
+<button class="text-on-tertiary-container font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all">
+                            EXPLORE_PROTOCOL
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Horizontal Scroll -->
+<section class="border-y border-outline-variant bg-surface-container-lowest/50 py-lg overflow-hidden">
+<div class="flex animate-infinite-scroll whitespace-nowrap gap-xl items-center opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+<span class="font-display-lg text-display-lg tracking-tighter">REACT_DB</span>
+<span class="w-4 h-4 rounded-full bg-on-tertiary-container"></span>
+<span class="font-display-lg text-display-lg tracking-tighter">NEXT.JS_CORE</span>
+<span class="w-4 h-4 rounded-full bg-primary-container"></span>
+<span class="font-display-lg text-display-lg tracking-tighter">RUST_ENGINE</span>
+<span class="w-4 h-4 rounded-full bg-on-tertiary-container"></span>
+<span class="font-display-lg text-display-lg tracking-tighter">NODE_ACCESS</span>
+<span class="w-4 h-4 rounded-full bg-primary-container"></span>
+<span class="font-display-lg text-display-lg tracking-tighter">PYTHON_SCRIPT</span>
+<span class="w-4 h-4 rounded-full bg-on-tertiary-container"></span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full border-t border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-7xl mx-auto">
+<div class="flex flex-col gap-2 items-center md:items-start">
+<div class="text-cyan-400 font-bold text-xl font-['Space_Grotesk'] tracking-tighter">DEV_CORE</div>
+<p class="text-slate-500 font-['Space_Grotesk'] text-xs uppercase tracking-widest">© 2024 DEV_CORE // TERMINAL_ACCESS_GRANTED</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-cyan-300 underline underline-offset-4 font-['Space_Grotesk'] text-xs uppercase tracking-widest transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="text-slate-500 hover:text-cyan-300 underline underline-offset-4 font-['Space_Grotesk'] text-xs uppercase tracking-widest transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="text-slate-500 hover:text-cyan-300 underline underline-offset-4 font-['Space_Grotesk'] text-xs uppercase tracking-widest transition-opacity hover:opacity-80" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<style>
+        @keyframes infinite-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+            display: flex;
+            width: fit-content;
+            animation: infinite-scroll 40s linear infinite;
+        }
+    </style>
+</body></html>
